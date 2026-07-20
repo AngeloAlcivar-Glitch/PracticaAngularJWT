@@ -1,0 +1,114 @@
+<div class="contenedor">
+
+    <h2>Gestión de Productos</h2>
+
+    <p-button
+        label="Nuevo Producto"
+        icon="pi pi-plus"
+        (onClick)="nuevo()">
+    </p-button>
+
+    <br><br>
+
+    @if(mostrarFormulario){
+
+    <div class="formulario">
+
+        <input
+            pInputText
+            type="text"
+            placeholder="Nombre"
+            [(ngModel)]="producto.nombre">
+
+        <br><br>
+
+        <input
+            pInputText
+            type="text"
+            placeholder="Descripción"
+            [(ngModel)]="producto.descripcion">
+
+        <br><br>
+
+        <input
+            pInputText
+            type="number"
+            placeholder="Precio"
+            [(ngModel)]="producto.precio">
+
+        <br><br>
+
+        <input
+            pInputText
+            type="number"
+            placeholder="Stock"
+            [(ngModel)]="producto.stock">
+
+        <br><br>
+
+        <p-button
+            label="Guardar"
+            icon="pi pi-save"
+            (onClick)="guardar()">
+        </p-button>
+
+    </div>
+
+    <br>
+
+    }
+
+    <p-table
+        [value]="productos"
+        [tableStyle]="{'min-width':'60rem'}">
+
+        <ng-template pTemplate="header">
+
+            <tr>
+
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+
+            </tr>
+
+        </ng-template>
+
+        <ng-template
+            pTemplate="body"
+            let-producto>
+
+            <tr>
+
+                <td>{{producto.id}}</td>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.descripcion}}</td>
+                <td>{{producto.precio}}</td>
+                <td>{{producto.stock}}</td>
+
+                <td>
+
+                    <p-button
+    icon="pi pi-pencil"
+    (onClick)="editar(producto)">
+</p-button>
+
+                    &nbsp;
+
+                    <p-button
+    icon="pi pi-trash"
+    (onClick)="eliminar(producto.id)">
+</p-button>
+
+                </td>
+
+            </tr>
+
+        </ng-template>
+
+    </p-table>
+
+</div>

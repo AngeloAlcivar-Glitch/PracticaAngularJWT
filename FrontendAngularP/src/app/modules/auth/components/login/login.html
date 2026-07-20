@@ -1,0 +1,72 @@
+<div class="flex justify-content-center mt-8">
+
+
+<p-card header="Iniciar Sesión">
+
+
+<div class="mb-3">
+
+
+<label>Correo</label>
+
+
+<input
+
+pInputText
+
+type="email"
+
+class="w-full"
+
+[(ngModel)]="correo">
+
+
+</div>
+
+
+
+<div class="mb-3">
+
+
+<label>Contraseña</label>
+
+
+<p-password
+
+[(ngModel)]="password"
+
+[feedback]="false">
+
+</p-password>
+
+
+</div>
+
+
+
+<p-button
+
+label="Ingresar"
+
+icon="pi pi-sign-in"
+
+(click)="ingresar()">
+
+</p-button>
+
+
+<br><br>
+
+
+<a routerLink="/registro">
+
+Crear cuenta
+
+</a>
+
+
+
+</p-card>
+
+
+</div>

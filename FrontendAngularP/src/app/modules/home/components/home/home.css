@@ -1,0 +1,53 @@
+﻿:host {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.15), transparent 28%),
+    linear-gradient(180deg, #f8fbff 0%, #eef2f7 100%);
+}
+
+.home {
+  width: min(780px, 100%);
+  padding: 3rem;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.1);
+  text-align: center;
+}
+
+.home h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.4rem, 2.7vw, 3.4rem);
+  color: #0f172a;
+  line-height: 1.02;
+}
+
+.home p {
+  margin: 0 auto 2rem;
+  max-width: 34rem;
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.home button {
+  min-width: 170px;
+  margin: 0.5rem;
+  padding: 1rem 1.6rem;
+  border: none;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 18px 34px rgba(37, 99, 235, 0.16);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.home button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
