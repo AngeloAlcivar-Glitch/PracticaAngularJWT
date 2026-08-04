@@ -35,6 +35,8 @@ jobs:
           cp -r Backend/src backend-deploy/
           cp Backend/package.json backend-deploy/
           cp Backend/package-lock.json backend-deploy/
+          cd backend-deploy
+          npm ci --omit=dev
 
       - name: Subir artefacto
         uses: actions/upload-artifact@v4
