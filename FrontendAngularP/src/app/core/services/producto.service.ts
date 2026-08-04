@@ -3,57 +3,67 @@ import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
-  providedIn:'root'
+  providedIn: 'root'
 })
 export class ProductoService {
 
 
-private api="http://localhost:3000/api/productos";
+  private apiUrl = 'http://localhost:3000/api/productos';
 
 
-constructor(
-private http:HttpClient
-){}
-
-
-
-listar(){
-
-return this.http.get<any[]>(this.api);
-
-}
+  constructor(private http: HttpClient){}
 
 
 
-crear(producto:any){
+  listar(){
 
-return this.http.post(
-this.api,
-producto
-);
+    return this.http.get(
+      this.apiUrl
+    );
 
-}
-
-
-
-actualizar(id:number, producto:any){
-
-return this.http.put(
-`${this.api}/${id}`,
-producto
-);
-
-}
+  }
 
 
 
-eliminar(id:number){
+  obtenerPorId(id:number){
 
-return this.http.delete(
-`${this.api}/${id}`
-);
+    return this.http.get(
+      `${this.apiUrl}/${id}`
+    );
 
-}
+  }
+
+
+
+  crear(producto:any){
+
+    return this.http.post(
+      this.apiUrl,
+      producto
+    );
+
+  }
+
+
+
+  actualizar(id:number, producto:any){
+
+    return this.http.put(
+      `${this.apiUrl}/${id}`,
+      producto
+    );
+
+  }
+
+
+
+  eliminar(id:number){
+
+    return this.http.delete(
+      `${this.apiUrl}/${id}`
+    );
+
+  }
 
 
 }
